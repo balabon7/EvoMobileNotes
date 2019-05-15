@@ -13,7 +13,7 @@
         <!--List of Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="List of Notes" id="BYZ-38-t0r" customClass="NotesListViewController" customModule="EvoMobileNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NotesListViewController" customModule="EvoMobileNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,29 +42,51 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="k2K-uw-gOU"/>
+                    <navigationItem key="navigationItem" title="List of Notes" id="OKy-Sp-olo"/>
                     <connections>
                         <outlet property="noteTableView" destination="Yfq-Zg-3I2" id="m5e-cZ-amM"/>
+                        <segue destination="xvh-Xf-myD" kind="show" identifier="DetailSegue" id="z3g-IF-T03"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="955.07246376811599" y="24.456521739130437"/>
         </scene>
-        <!--View Controller-->
+        <!--Details notes-->
         <scene sceneID="84u-zC-ao3">
             <objects>
-                <viewController id="xvh-Xf-myD" sceneMemberID="viewController">
+                <viewController title="Details notes" id="xvh-Xf-myD" customClass="DetailViewController" customModule="EvoMobileNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lXh-m3-Daj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="esb-sE-eGa">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xvh-Xf-myD" id="6By-uM-MbX"/>
+                                </connections>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="esb-sE-eGa" firstAttribute="bottom" secondItem="GhI-QS-BOV" secondAttribute="bottom" id="EJK-8R-MCh"/>
+                            <constraint firstItem="esb-sE-eGa" firstAttribute="top" secondItem="GhI-QS-BOV" secondAttribute="top" id="Wda-UV-N77"/>
+                            <constraint firstAttribute="trailing" secondItem="esb-sE-eGa" secondAttribute="trailing" id="aZl-Cs-Vkq"/>
+                            <constraint firstItem="esb-sE-eGa" firstAttribute="leading" secondItem="lXh-m3-Daj" secondAttribute="leading" id="eOc-TG-POn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GhI-QS-BOV"/>
                     </view>
+                    <connections>
+                        <outlet property="detailTextView" destination="esb-sE-eGa" id="NiT-Rc-1wO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Q6-tW-IkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="24"/>
+            <point key="canvasLocation" x="1766.6666666666667" y="23.64130434782609"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gko-hp-763">
