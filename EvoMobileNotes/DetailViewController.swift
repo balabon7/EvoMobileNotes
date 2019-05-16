@@ -25,7 +25,6 @@ class DetailViewController: UIViewController {
         
     }
     @objc func share() {
-        
     }
     
     func setText(text: String) {
@@ -34,11 +33,6 @@ class DetailViewController: UIViewController {
             detailTextView.text = text
         }
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        detailTextView.becomeFirstResponder()
-//    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
